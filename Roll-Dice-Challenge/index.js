@@ -11,8 +11,8 @@ let refresh = function () {
   let image2 = document.getElementById("image2");
   let rand1 = Math.floor(Math.random() * arr.length);
   let rand2 = Math.floor(Math.random() * arr.length);
-  image1.src = "../Components/" + arr[rand1];
-  image2.src = "../Components/" + arr[rand2];
+  image1.src = "./Images/" + arr[rand1];
+  image2.src = "./Images/" + arr[rand2];
   let result = rand1 > rand2 ? "Player 1 Won" : "Player 2 Won";
   document.getElementById("result").innerHTML = `<em>${result}</em>`;
 };
