@@ -1,0 +1,45 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(32, 33, 35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1{
+  font-size: 5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(103, 215, 163);
+}
+.box{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  gap: 2rem;
+}
+h4{
+  font-size: 2rem;
+  color: rgb(103, 215, 163);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.refresh{
+  grid-column: span 2;
+  width: 350px;
+  height: 60px;
+  justify-self: center;
+  background-color: rgb(103, 215, 163);
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 18px;
+}
+.refresh:hover{
+  background-color: rgb(62, 133, 99);
+}
+#result{
+  font-size: 1.5rem;
+  color: rgb(245, 11, 11);
+  font-weight: bold;
+  
+}
