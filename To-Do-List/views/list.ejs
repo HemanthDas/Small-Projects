@@ -7,10 +7,15 @@
     <title>To Do List</title>
   </head>
   <body>
-    <% if(Today.toLowerCase()=="saturday"){%>
-    <h1 style="color: blueviolet"><%= Today %></h1>
-    <% }else{ %>
-    <h1 style="color: brown">No dear</h1>
-    <% }%>
+    <h1><%= Today %></h1>
+    <ul>
+      <% for(let i=0;i<list.length;i++){ %>
+        <li><%=list[i] %></li>
+     <% } %>
+    </ul>
+    <form method="post" action="/">
+      <input type="text" placeholder="Enter" name="newItem" />
+      <button type="submit" name="button">Send</button>
+    </form>
   </body>
 </html>
