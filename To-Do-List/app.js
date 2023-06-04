@@ -38,3 +38,6 @@ app.listen(3000, () => {
 app.get("/work", (req, res) => {
   res.render("list.ejs", { Title: "Work", list: workItems });
 });
+app.get("/about", (req, res) => {
+  res.render("about.ejs");
+});
