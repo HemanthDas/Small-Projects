@@ -4,8 +4,11 @@ const app = express();
 const ejs = require("ejs");
 
 app.set("view engine", "ejs");
+app.use(express.static("public"));
+
 app.use(bodyparser.urlencoded({ extended: true }));
-let items = ["good morning"];
+let items = [];
+let workItems = [];
 const option = {
   day: "numeric",
   month: "long",
@@ -13,17 +16,25 @@ const option = {
   year: "numeric",
 };
 app.get("/", function (req, res) {
-  var today = new Date();
+  let today = new Date();
   res.render("list.ejs", {
-    Today: today.toLocaleDateString("en-us", option),
+    Title: today.toLocaleDateString("en-us", option),
     list: items,
   });
 });
 app.post("/", (req, res) => {
-  let item = req.body.newItem;
-  items.push(item);
-  res.redirect("/");
+  console.log(req.body);
+  if (req.body.button === "Work") {
+    workItems.push(req.body.newItem);
+    res.redirect("/work");
+  } else {
+    items.push(req.body.newItem);
+    res.redirect("/");
+  }
 });
 app.listen(3000, () => {
   console.log("app running in http://localhost:3000/");
+});
+app.get("/work", (req, res) => {
+  res.render("list.ejs", { Title: "Work", list: workItems });
 });
