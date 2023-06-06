@@ -38,3 +38,9 @@ footer {
   height: 5rem;
   background-color: aquamarine;
 }
+form {
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr;
+  row-gap: 1rem;
+}
