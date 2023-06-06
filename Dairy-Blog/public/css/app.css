@@ -38,9 +38,17 @@ footer {
   height: 5rem;
   background-color: aquamarine;
 }
-form {
+form > .box {
   padding: 10px;
   display: grid;
   grid-template-rows: 1fr;
   row-gap: 1rem;
+}
+form > button {
+  background-color: rgb(55, 126, 170);
+  color: white;
+  width: 4.5rem;
+  height: 2.3rem;
+  float: right;
+  border: 0px;
 }
