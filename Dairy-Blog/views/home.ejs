@@ -1,4 +1,7 @@
 <%- include("header.ejs")%>
-   <h1>Home</h1>
-   <%= HomeContent %>
+<h1>Home</h1>
+<%= HomeContent %> <% posts.forEach((post)=>{ %>
+<h1><%= post.title %></h1>
+<%= post.blog %> <% }) %>
+<h1><%= posts.title %></h1>
 <%- include("footer.ejs")%>
