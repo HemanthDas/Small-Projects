@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-
+const _ = require("lodash");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -34,6 +34,16 @@ app.post("/compose", (req, res) => {
   };
   posts.push(post);
   res.redirect("/");
+});
+
+app.get("/posts/:postId", (req, res) => {
+  posts.forEach((i) => {
+    if (_.lowerCase(i.title) === _.lowerCase(req.params.postId)) {
+      res.render("post.ejs", { title: i.title, content: i.blog });
+    } else {
+      console.log("match not found");
+    }
+  });
 });
 app.listen(3000, () => {
   console.log("Server running in http://localhost:3000/");
