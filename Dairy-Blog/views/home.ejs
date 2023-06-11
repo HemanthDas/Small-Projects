@@ -2,6 +2,8 @@
 <h1>Home</h1>
 <%= HomeContent %> <% posts.forEach((post)=>{ %>
 <h1><%= post.title %></h1>
-<%= post.blog %> <% }) %>
-<h1><%= posts.title %></h1>
-<%- include("footer.ejs")%>
+<p>
+  <%= post.blog.substring(0,100)+"..." %>
+  <a href="/posts/<%= post.title%>">Read more </a>
+</p>
+<% }) %> <%- include("footer.ejs")%>
