@@ -13,7 +13,7 @@ nav {
   align-items: center;
   justify-content: end;
 }
-a {
+nav > a {
   text-decoration: none;
   padding: 5rem;
   color: white;
