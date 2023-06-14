@@ -85,7 +85,7 @@ app.post("/delete", async (req, res) => {
       );
     } catch (e) {
       console.log(e);
-      res.send(404);
+      res.send(500);
     }
     res.redirect("/" + IName);
   }
